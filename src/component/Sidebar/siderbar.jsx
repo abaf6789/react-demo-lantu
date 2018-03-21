@@ -5,18 +5,15 @@ import Item from "./item"
 export default class Siderbar extends Component {
     clickFn2 = (index) => {
         this.props.clickFn(index)
-        console.log(index)
     }
     render() {
         const SidebarStyle = { width: "200px", background: "#373737", textOverflow: "ellipsis", wordBreak: "break-all", whiteSpace: "nowrap", overflow: "hidden", fontSize: "13px" }
         return (
-            <div>
-                <Sidebar as={Menu} animation='scale down' width='thin' visible={this.props.visible} icon='labeled' vertical inverted style={SidebarStyle}>
-                    {this.props.data.map((item, index) => {
-                        return <Item index={index} item={item} key={index} clickFn2={this.clickFn2} visible={this.props.visible} animation='scale down' />
-                    })}
-                </Sidebar>
-            </div>
+            <Sidebar as={Menu} animation='scale down' width='thin' visible={this.props.visible} icon='labeled' vertical inverted style={SidebarStyle}>
+                {this.props.data.map((item, index) => {
+                    return <Item index={index} item={item} key={index} clickFn2={this.clickFn2} visible={this.props.visible} animation='scale down' />
+                })}
+            </Sidebar>
         )
     }
 }

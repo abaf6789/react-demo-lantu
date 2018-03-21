@@ -9,7 +9,7 @@ export default class Item extends Component {
         const item = this.props.item
         return (
             <div>
-                <Menu.Item style={itemStyle} name={item.name} key={index} onClick={this.props.clickFn2.bind(this, index)} animation='scale down'>
+                <Menu.Item style={itemStyle} name={item.name} key={index} onClick={this.props.clickFn2.bind(this, index)}>
                     <Icon name="home" style={IconStyle} />
                     {item.name}
                 </Menu.Item>
